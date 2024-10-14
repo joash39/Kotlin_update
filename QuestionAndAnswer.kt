@@ -125,19 +125,24 @@ fun adults() {
 */
   
 fun useAddFunc() {
-    add(firstNumber = 10,secondNumber = 5,thirdNumber = 8)
+    val firstNumber = 10
+    val secondNumber = 5
+    val thirdNumber = 8
+    
+    val result = add(firstNumber, secondNumber)
+    val anotherResult = subtract(firstNumber, thirdNumber)
 
-	
+    println("$firstNumber + $secondNumber = $result")
+    println("$firstNumber - $thirdNumber = $anotherResult")
 }
 
-fun add(firstNumber: Int ,secondNumber: Int,thirdNumber: Int){
-    val result = firstNumber + secondNumber
-    val otherresult = firstNumber + thirdNumber
-    println("$firstNumber + $secondNumber = $result")
-    println("$firstNumber + $thirdNumber = $otherresult")
+fun add(firstNumber: Int, secondNumber: Int): Int {
+    return firstNumber + secondNumber
+}
 
-   
-    
+fun subtract(firstNumber: Int, secondNumber: Int): Int {
+    return firstNumber - secondNumber
+}
 }
 
 /*
