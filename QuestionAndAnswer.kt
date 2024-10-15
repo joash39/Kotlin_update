@@ -140,8 +140,8 @@ fun add(firstNumber: Int, secondNumber: Int): Int {
     return firstNumber + secondNumber
 }
 
-fun subtract(firstNumber: Int, secondNumber: Int): Int {
-    return firstNumber - secondNumber
+fun subtract(firstNumber: Int, thirdNumber: Int): Int {
+    return firstNumber - thirdNumber
 }
 }
 
