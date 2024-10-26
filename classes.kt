@@ -1,17 +1,16 @@
-/**class SmartDevice {
-    fun turnOn() {
-        println("Smart device is turned on.")
-    }
-    fun turnOff() {
-        println("Smart device is turned off.")
-    }
-}
+//using modifiers i.e. public, private, protected, internal
+/**
+*public. Default visibility modifier. Makes the declaration accessible everywhere
+*private. Makes the declaration accessible in the same class or source file
+*protected. Makes the declaration accessible in subclasses.
+* internal. Makes the declaration accessible in the same module
 
 **/
-
 //superclass -> SmartDevice
 open class SmartDevice(val name: String, val category: String) {
-    var deviceStatus = "Online"
+		
+    
+    private var deviceStatus = "Online"
     open val deviceType = "Unknown"
     
     open fun turnOn() {
@@ -34,7 +33,7 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) :
         // you created when you learned about the getter and setter functions
         
         var speakerVolume = 2
-        set(value){
+        protected set(value){
             if(value in 0..100){
                 field = value
             }
@@ -129,11 +128,18 @@ class SmartHome(val smartTvDevice : SmartTvDevice,
                val smartLightDevice : SmartLightDevice) {
     //In the body of the SmartHome class, define a turnOnTv()method that calls the turnOn()
     // method on the smartTvDevice property
+
+	var deviceTurnOnCount = 0
+	private set 
+
+	
     
     fun turnOnTv() {
+	deviceTurnOnCount++
         smartTvDevice.turnOn()
     }
     fun turnOffTv() {
+	    deviceTurnOnCount--
         smartTvDevice.turnOff()
     }
     
