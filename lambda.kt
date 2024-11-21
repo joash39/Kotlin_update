@@ -1,6 +1,7 @@
 fun main() {
     val coin: (Int) -> String = {
-        quantity -> "$quantity quarters"
+        // quantity -> "$quantity quarters"
+        "$it quarters"
     }
     
     val cupcake: (Int) -> String = {
@@ -17,6 +18,7 @@ fun main() {
     
     // call the trick() function, but this time
     //  include the parentheses like you'd do when you call any other function
+    /**
     trickFun()
     
     // call the trickone variable
@@ -25,7 +27,10 @@ fun main() {
     // head or tail functions
     headFun()
     tailFun()
-    gift()ac
+    
+    **/
+    gift()
+    nogift()
     
   
     
@@ -34,6 +39,8 @@ fun main() {
 fun trick() {
     println("No tricks")
 }
+
+
 
 // Rewrite the trick() function with a lambda expression
 // Use functions as a data type
@@ -66,6 +73,7 @@ val tail = {
 // Pass a function to another function as an argument
 
 fun giftornogift(isGift: Boolean, extraGift: (Int) -> String): () -> Unit {
+    // extraTreat: ((Int) -> String)?) making extraTreat as null  
   if(isGift){
       println(extraGift(5))
       return gift
